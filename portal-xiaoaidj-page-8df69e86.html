@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小艾电竞 · 再访与收藏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f5f7;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: #2d3436;
+            line-height: 1.6;
+            padding: 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 860px;
+            width: 100%;
+        }
+
+        /* hero 区域 —— 开场短句 */
+        .hero-statement {
+            margin-bottom: 2.8rem;
+            padding: 3.2rem 2rem;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e5eb;
+            text-align: center;
+        }
+
+        .hero-statement .label {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #999fab;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-statement h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #1e272e;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+
+        .hero-statement h1 span {
+            background: linear-gradient(135deg, #636e72, #2d3436);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-statement .sub {
+            margin-top: 1.2rem;
+            font-size: 1rem;
+            color: #6c7a89;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 承接段落 —— 生活化的再访叙事 */
+        .story-block {
+            background: #ffffff;
+            border: 1px solid #e2e5eb;
+            border-radius: 20px;
+            padding: 2rem 2rem 2.2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            margin-bottom: 2rem;
+        }
+
+        .story-block p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #2d3436;
+        }
+
+        .story-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-block .highlight-link {
+            color: #2d3436;
+            border-bottom: 1px dashed #9babb8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .story-block .highlight-link:hover {
+            border-bottom: 1px solid #2d3436;
+        }
+
+        /* 特点列表 (卡片风格) */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid #e5e9ef;
+            border-radius: 18px;
+            padding: 1.6rem 1.4rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .feature-card .icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #1e272e;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            color: #566573;
+            line-height: 1.5;
+        }
+
+        /* 场景+提示的段落，温和结尾 */
+        .scene-remark {
+            background: #ffffff;
+            border: 1px solid #e2e5eb;
+            border-radius: 20px;
+            padding: 2rem 2rem 1.8rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            margin-top: 0.8rem;
+        }
+
+        .scene-remark h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #1e272e;
+            margin-bottom: 1rem;
+        }
+
+        .scene-remark p {
+            margin-bottom: 1rem;
+            font-size: 0.98rem;
+            color: #3d4a56;
+        }
+
+        .scene-remark .faq-mini {
+            background: #f8f9fb;
+            border-radius: 14px;
+            padding: 1.2rem 1.4rem;
+            margin: 1.4rem 0 0.4rem;
+            border-left: 3px solid #b2bec3;
+        }
+
+        .faq-mini p {
+            margin-bottom: 0.4rem;
+            font-size: 0.92rem;
+        }
+
+        .faq-mini .q {
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .faq-mini .a {
+            color: #566573;
+            margin-top: 0.2rem;
+        }
+
+        /* 温和结尾区 */
+        .gentle-footer {
+            margin-top: 2.5rem;
+            padding: 1.2rem 0 0.8rem;
+            text-align: center;
+            border-top: 1px solid #e2e5eb;
+            font-size: 0.9rem;
+            color: #85929e;
+        }
+
+        .gentle-footer a {
+            color: #2d3436;
+            text-decoration: none;
+            border-bottom: 1px dotted #b2bec3;
+        }
+
+        .gentle-footer a:hover {
+            border-bottom: 1px solid #2d3436;
+        }
+
+        /* 响应式 */
+        @media (max-width: 540px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .hero-statement {
+                padding: 2rem 1.2rem;
+            }
+
+            .hero-statement h1 {
+                font-size: 1.6rem;
+            }
+
+            .story-block,
+            .scene-remark {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .feature-grid {
+                gap: 1rem;
+            }
+
+            .feature-card {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- 开场短句 hero -->
+    <div class="hero-statement">
+        <div class="label">✦ 再次遇见</div>
+        <h1>你曾经收藏的 <span>小艾电竞</span></h1>
+        <div class="sub">有时候，一个页面就像老朋友——<br>不需要刻意寻找，只是自然而然地回来看看。</div>
+    </div>
+
+    <!-- 承接段落：从再次访问和收藏切入 -->
+    <div class="story-block">
+        <p>书签栏里总有些地址，隔段时间就想点开。不是因为它变化很大，而是那种熟悉的布局和节奏，让人安心。
+            <a href="https://portal-xiaoaidj.com" class="highlight-link">小艾电竞</a>就是这样一个地方——界面干净，内容直给，没有冗余的弹窗或刺眼的广告。每次回来，都能快速找到自己关心的部分，像走进一家常去的街角店，老板点点头，你知道一切都还在。</p>
+        <p>收藏夹里的东西越来越多，但真正会反复打开的，往往是那些“不需要重新适应”的页面。而持续关注，往往始于这样一次不经意的再访。</p>
+    </div>
+
+    <!-- 特点列表 (卡片) -->
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="icon">📌</div>
+            <h3>信息轻量</h3>
+            <p>页面结构清晰，不堆砌模块。每一次加载都直奔主题，减少认知负担。</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🔁</div>
+            <h3>常看常新</h3>
+            <p>内容更新节奏平实，没有轰炸式的推送，更适合长期关注与日常浏览。</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🧭</div>
+            <h3>导航友好</h3>
+            <p>从首页到内页的路径直观，收藏后再次访问也不会迷路，适合作为固定起点。</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🔖</div>
+            <h3>收藏友好</h3>
+            <p>页面标题和描述清晰，适合直接存入浏览器书签，随时唤出。</p>
+        </div>
+    </div>
+
+    <!-- 场景 + 提示 + FAQ摘要 温和结尾前 -->
+    <div class="scene-remark">
+        <h2>不妨把这里放进口袋</h2>
+        <p>在碎片时间里，我们常常打开一堆页面又迅速关闭。而值得「持续关注」的站点，往往具备一种温和的引力：它不催促你点击，但你知道需要时它就在。</p>
+        <p>如果你也偏爱这种不喧哗的体验，或许可以试着把 <a href="https://portal-xiaoaidj.com" style="color:#2d3436; border-bottom:1px dashed #9babb8; text-decoration:none;">小艾电竞</a> 固定到浏览器标签栏，或者记在备忘录里。下一次想找个安静、直接的地方待一会儿，就不会扑空。</p>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini">
+            <p class="q">❓ 常见想法：页面会定期变化吗？</p>
+            <p class="a">风格和结构保持一贯的简洁，内容会根据阶段进行适度更新，不会突然大改布局而打乱习惯。</p>
+            <p class="q" style="margin-top:0.8rem;">❓ 适合什么样的场景使用？</p>
+            <p class="a">无论是电脑端的大屏，还是手机上的快速浏览，响应式适配都自然；等人、通勤、午休，点开即可。</p>
+        </div>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="gentle-footer">
+        <span>书签里总有一个位置留给 </span>
+        <a href="https://portal-xiaoaidj.com">小艾电竞</a>
+        <span> · 不打扰的陪伴</span>
+    </div>
+</div>
+</body>
+</html>
